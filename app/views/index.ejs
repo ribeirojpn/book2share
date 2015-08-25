@@ -6,20 +6,45 @@
     <title>Book2Share</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+    <!-- Web Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body>
     <header class="nav navbar">
       <div class="container">
-        <ul class="list-inline">
-          <li><h2>Book2Share</h2></li>
-          
-          <li><img style="width:40px;"class="user-photo" src="<%= usuarioImg %>"></li>
-          <li><%= usuarioLogado %></li>
-
-        </ul>
+        <div class="row">
+          <div class="col-md-4">
+            <a class="navbar-brand" href="#">Book2Share</a>
+          </div>
+          <div class="col-md-4">
+            <form class="navbar-form" role="search">
+              <div class="input-group search-nav">
+                <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1" ng-model="search.text" required="">
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-default" ng-click="find()">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline navbar-right navbar-text">
+              <li><%= usuarioLogado %></li> |
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-
     </header>
+
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="./../../public/vendor/angular-route/angular-route.min.js"></script>
+  <script src="./../../public/vendor/angular-resource/angular-resource.min.js"></script>
   </body>
 
 </html>
