@@ -1,11 +1,74 @@
 body {
-
+  font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
 .search-nav {
   width: 100%;
 }
 
+.search-nav input,.search-nav .btn,
+.search-nav input:hover,.search-nav .btn:hover,
+.search-nav input:focus,.search-nav .btn:focus,
+.search-nav .btn:active{
+  background-color: #363636;
+  color: white;
+  border-top: #363636;
+  border-left: #363636;
+  border-right: #363636;
+  /*border-bottom: white;*/
+  border-radius: 0px;
+}
+.search-nav .btn,.search-nav .btn:hover,
+.search-nav .btn:focus,.search-nav .btn:active{
+  border-bottom: #363636;
+}
+
 .search-nav .input-group-btn .btn-default {
   border-left: 0px;
+}
+
+/* home.html */
+
+.banner {
+  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  url(./../images/books.jpg);
+  background-repeat: repeat,no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.banner h1 {
+  margin-top: 120px;
+  font-size: 80px;
+}
+.banner p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.feature {
+  padding:80px 0px;
+}
+
+.feature .fa{
+  margin-bottom: 20px;
+}
+
+
+/* Substition */
+.navbar {
+  margin-bottom: 0px;
+  background-color: #363636;
+  border-radius: 0px;
+  color: #e3e3e3;
+}
+
+.navbar a{
+  color: white;
+}
+
+.search-nav .form-control:focus {
+    border-color: white;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(102, 175, 233, 0.6);
 }

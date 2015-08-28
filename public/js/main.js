@@ -3,4 +3,5 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
     templateUrl: 'partials/home.html',
     controller: 'HomeController'
   });
+  $routeProvider.otherwise({redirectTo:'/'});
 });
