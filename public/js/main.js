@@ -3,5 +3,14 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
     templateUrl: 'partials/home.html',
     controller: 'HomeController'
   });
+
+  $routeProvider.when('/s',{
+    templateUrl:'partials/search.html'
+  });
+
+  $routeProvider.when('/add',{
+    templateUrl:'partials/addbook.html'
+  });
+
   $routeProvider.otherwise({redirectTo:'/'});
 });

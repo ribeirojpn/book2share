@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
-    <title>Book2Share</title>
+    <title>Search for <%= searchTxt %></title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/styles.css">
@@ -18,7 +18,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <a class="navbar-brand" href="#/">Book2Share</a>
+            <a class="navbar-brand" href="/#/">Book2Share</a>
           </div>
           <div class="col-md-4">
             <form class="navbar-form" action="/search" method="GET" role="search">
@@ -34,21 +34,45 @@
           </div>
           <div class="col-md-4">
             <ul class="list-inline navbar-right navbar-text">
-              <li><%= usuarioLogado %></li> |
+              <li>JP</li> |
               <li><a href="#">Logout</a></li>
             </ul>
           </div>
         </div>
       </div>
     </header>
-    <div ng-view>
+    <div class="search">
+      <div class="search-text">
+        <div class="container">
+          <p>Searching for "<a><%= searchTxt %></a>".</p>
+        </div>
+      </div>
+      <div class="search-result">
+        <div class="container">
+          <ul class="book-list list-inline list-unstyled">
+            <li class="book">
+              <div class="row">
+                <div class="col-md-2 text-center">
+                  <img src="images/hp.jpg">
+                </div>
+                <div class="col-md-10">
+                  <h4 class="book-title">Harry Potter e a Pedra Filosofal</h4>
+                  <p class="book-description">
+                    Harry Potter e a Pedra Filosofal é o primeiro livro dos sete
+                    volumes da série de fantasia Harry Potter
+                  </p>
+                  <p class="owner">Owner: João Paulo Ribeiro</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-
   <script src="vendor/angular/angular.min.js"></script>
   <script src="vendor/angular-route/angular-route.min.js"></script>
   <script src="vendor/angular-resource/angular-resource.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/controllers/HomeController.js"></script>
   </body>
-
 </html>

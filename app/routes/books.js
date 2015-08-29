@@ -5,5 +5,5 @@ module.exports = function (app) {
 
   app.route('/books/:id')
     .get(controller.getBook);
-    // .delete(controller.removeBook);
+// .delete(controller.removeBook);
 }
