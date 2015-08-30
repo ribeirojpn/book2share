@@ -135,3 +135,47 @@ body {
     border-color: white;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(102, 175, 233, 0.6);
 }
+
+/* Auth buttons */
+.btn-social-box {
+  margin: auto;
+  width: 400px;
+}
+.btn-social {
+  margin: auto;
+  width: 250px;
+  text-align: left;
+  font-size: 16px;
+  color: white;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-social:hover, .btn-social:focus,.btn-social:active {
+  color: white;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-social i{
+  width: 45px;
+  float: left;
+  font-size: 24px;
+}
+.btn-social-box .disabled {
+  color: #454545;
+}
+.btn-facebook {
+  background-color: #3B5998;
+}
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active{
+  background-color: #2D4373;
+}
+.btn-google {
+  background-color: #DD4B39;
+}
+.btn-google:hover, .btn-google:focus, .btn-google:active{
+  background-color: #C23321;
+}
+.btn-twitter {
+  background-color: #55ACEE;
+}
+.btn-twitter:hover, .btn-twitter:focus, .btn-twitter:active{
+  background-color: #2795E9;
+}

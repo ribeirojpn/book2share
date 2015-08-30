@@ -12,5 +12,9 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
     templateUrl:'partials/addbook.html'
   });
 
+  $routeProvider.when('/login',{
+    templateUrl: 'partials/login.html'
+  });
+
   $routeProvider.otherwise({redirectTo:'/'});
 });

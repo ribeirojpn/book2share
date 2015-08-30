@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     findOrCreate = require('mongoose-findorcreate');
+
 module.exports = function() {
   var schema = mongoose.Schema({
     login: {
@@ -19,7 +20,6 @@ module.exports = function() {
     },
     books: [{type: mongoose.Schema.ObjectId, ref: 'Book'}],
     requests: []
-
   });
 
   schema.plugin(findOrCreate);
