@@ -14,8 +14,12 @@ angular.module('booktoshare').controller('AddBookController', function ($scope,$
         $scope.book = new Book();
       })
       .catch(function (erro) {
-        console.log('Não foi possivel salvar');
-        $scope.mensagem.erro = 'Could not add the book. Check if is all right';
+        console.log(erro);
+        if (erro.statusText === "Unauthorized") {
+          $scope.mensagem.erro = 'Could not add the book: Unauthorized. You must be logged!';
+        } else {
+          $scope.mensagem.erro = 'Could not add the book. Check if is all right';
+        }
         $scope.mensagem.success = '';
       });
   }

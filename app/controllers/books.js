@@ -27,7 +27,10 @@ module.exports = function(app) {
   }
 
   controller.saveBook = function (req,res) {
-    Book.create(req.body).then(
+
+    var newBook = req.body;
+    newBook.owner = req.user._id;
+    Book.create(newBook).then(
       function (book) {
         res.status(201).json(book);
       },
