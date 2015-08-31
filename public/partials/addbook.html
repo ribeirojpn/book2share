@@ -1,22 +1,28 @@
 <div class="container">
   <div class="add-book">
+    <div class="alert alert-danger" role="alert" ng-show="mensagem.erro">
+      <i class="fa fa-exclamation-circle"></i> {{mensagem.erro}}
+    </div>
+    <div class="alert alert-success" role="alert" ng-show="mensagem.success">
+      <i class="fa fa-check"></i> {{mensagem.success}}
+    </div>
     <h1 class="text-center">Add Book</h1>
-    <form class="add-box">
+    <form class="add-box" ng-submit="save()">
       <div class="form-group">
         <label for="bookTitle">Title:</label>
-        <input type="text" class="form-control" name="title" id="bookTitle" placeholder="Title">
+        <input type="text" class="form-control" name="title" ng-model="book.title" id="bookTitle" placeholder="Title" required="">
       </div>
       <div class="form-group">
         <label for="bookAuthor">Author:</label>
-        <input type="text" class="form-control" name="author" id="bookAuthor" placeholder="Author">
+        <input type="text" class="form-control" name="author" ng-model="book.author" id="bookAuthor" placeholder="Author"required="">
       </div>
       <div class="form-group">
         <label for="bookDescription">Description:</label>
-        <textarea class="form-control" name="description" id="bookDescription" placeholder="Description"></textarea>
+        <textarea class="form-control" name="description" ng-model="book.description" id="bookDescription" placeholder="Description"></textarea>
       </div>
       <div class="form-group">
         <label for="bookUrlImage">Image URL:</label>
-        <input type="text" class="form-control" name="url_image" id="bookUrlImage" placeholder="URL Image">
+        <input type="text" class="form-control" name="url_image" ng-model="book.image" id="bookUrlImage" placeholder="URL Image">
         <p class="help-block">Ex: http://imagens.elivrosgratis.com/capas/Harry-Potter--E-A-Pedra-Filosofal.jpg</p>
       </div>
       <br>

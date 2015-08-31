@@ -34,8 +34,12 @@
           </div>
           <div class="col-md-4">
             <ul class="list-inline navbar-right navbar-text">
-              <li><%= usuarioLogado %></li> |
-              <li><a href="#">Logout</a></li>
+              <% if (usuarioLogado.length > 0) {%>
+                <li><%= usuarioLogado %></li> |
+                <li><a href="/logout">Logout</a></li>
+              <%} else {%>
+                <li><a href="#/login">Login</a></li>
+              <%}%>
             </ul>
           </div>
         </div>

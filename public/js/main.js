@@ -9,7 +9,8 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
   });
 
   $routeProvider.when('/add',{
-    templateUrl:'partials/addbook.html'
+    templateUrl:'partials/addbook.html',
+    controller: 'AddBookController'
   });
 
   $routeProvider.when('/login',{

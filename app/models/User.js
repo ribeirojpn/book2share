@@ -16,7 +16,7 @@ module.exports = function() {
     },
     photo: {
       type:String,
-      default: './../../public/images/user.jpg'
+      default: '/images/user.jpg'
     },
     books: [{type: mongoose.Schema.ObjectId, ref: 'Book'}],
     requests: []
