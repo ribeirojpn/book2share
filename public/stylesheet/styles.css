@@ -5,7 +5,6 @@ body {
 .search-nav {
   width: 100%;
 }
-
 .search-nav input,.search-nav .btn,
 .search-nav input:hover,.search-nav .btn:hover,
 .search-nav input:focus,.search-nav .btn:focus,
@@ -22,7 +21,6 @@ body {
 .search-nav .btn:focus,.search-nav .btn:active{
   border-bottom: #363636;
 }
-
 .search-nav .input-group-btn .btn-default {
   border-left: 0px;
 }
@@ -37,7 +35,6 @@ body {
   background-size: cover;
   color: white;
 }
-
 .banner h1 {
   margin-top: 120px;
   font-size: 80px;
@@ -51,27 +48,54 @@ body {
 .feature {
   padding:80px 0px;
 }
-
 .feature .fa{
   margin-bottom: 20px;
+}
+
+.list-resumed{
+  border-top: 1px solid #f2f2f2;
+  padding: 50px 0px;
+}
+.list-resumed h1{
+  margin-bottom: 40px;
+}
+.list-resumed ul{
+  margin:auto;
+  width:770px;
+}
+
+.book-item {
+  width: 100px;
+  height: 152px;
+  margin: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.book-item .item-title{
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .footer {
   padding: 20px;
   border-top: 1px solid #f2f2f2;
 }
-
 .footer a,.footer a:hover,
 .footer a:active,.footer a:focus{
   color: #363636;
   text-decoration: none;
 }
+
 /* search.html */
 
 .search-text {
   padding-top: 10px;
   background-color: #f6f6f6;
 }
+
 .search-result .book-list{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -83,21 +107,13 @@ body {
   padding: 10px;
   border-bottom: 1px solid #f2f2f2;
 }
-.search-result .book{
-  width: 100%;
-  padding: 10px;
-  border-bottom: 1px solid #f2f2f2;
-}
-
 .search-result .book .col-md-2{
   margin-left: -20px;
 }
-
 .search-result .book .col-md-10{
   margin-left: -40px;
   margin-right: 40px;
 }
-
 .search-result img{
   width: 80px;
 }
@@ -112,18 +128,18 @@ body {
   width: 600px;
   margin: auto;
 }
-
 .add-book .form-buttons a,.add-book .form-buttons button{
   font-size: 16px;
 }
+
 /* Substition */
+
 .navbar {
   margin-bottom: 0px;
   background-color: #363636;
   border-radius: 0px;
   color: #e3e3e3;
 }
-
 .navbar a{
   color: white;
 }
@@ -131,12 +147,14 @@ body {
 .navbar-right {
   margin-right: 0px;
 }
+
 .search-nav .form-control:focus {
     border-color: white;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(102, 175, 233, 0.6);
 }
 
 /* Auth buttons */
+
 .btn-social-box {
   margin: auto;
   width: 400px;

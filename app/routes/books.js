@@ -16,4 +16,7 @@ module.exports = function (app) {
   app.route('/books/:id')
     .get(controller.getBook);
     // .delete(controller.removeBook);
+
+  app.route('/books-resume')
+    .get(controller.getResumedBookList);
 }

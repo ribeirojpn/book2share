@@ -15,6 +15,7 @@ module.exports = function() {
     },
     image:{
       type: String,
+      default: '/images/default.jpg'
     },
     owner:{
       type: mongoose.Schema.ObjectId,

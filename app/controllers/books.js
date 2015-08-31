@@ -23,11 +23,9 @@ module.exports = function(app) {
     }, function (erro) {
       res.status(404).json('Não encontrado');
     });
-
   }
 
   controller.saveBook = function (req,res) {
-
     var newBook = req.body;
     newBook.owner = req.user._id;
     Book.create(newBook).then(
@@ -36,6 +34,18 @@ module.exports = function(app) {
       },
       function(erro){
         res.status(500).json(erro);
+      }
+    );
+  }
+
+  controller.getResumedBookList = function (req,res) {
+    console.log('get resume');
+    Book.find({},null,{limit:14}).exec().then(
+      function (books) {
+        res.json(books);
+      },function (erro) {
+        console.log(erro);
+        res.status(404).json('Não encontrado');
       }
     );
   }
