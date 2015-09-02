@@ -17,6 +17,9 @@ module.exports = function (app) {
     .get(controller.getBook);
     // .delete(controller.removeBook);
 
+  app.route('/user-books')
+    .get(controller.getUserBooks);
+
   app.route('/books-resume')
     .get(controller.getResumedBookList);
 }

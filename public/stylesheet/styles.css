@@ -25,6 +25,8 @@ body {
   border-left: 0px;
 }
 
+
+
 /* home.html */
 
 .banner {
@@ -42,7 +44,7 @@ body {
 }
 .banner p {
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .feature {
@@ -61,6 +63,7 @@ body {
 }
 .list-resumed ul{
   margin:auto;
+  margin-bottom: 20px;
   width:770px;
 }
 

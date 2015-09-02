@@ -39,11 +39,22 @@ module.exports = function(app) {
   }
 
   controller.getResumedBookList = function (req,res) {
-    console.log('get resume');
     Book.find({},null,{limit:14}).exec().then(
       function (books) {
         res.json(books);
       },function (erro) {
+        console.log(erro);
+        res.status(404).json('Não encontrado');
+      }
+    );
+  }
+
+  controller.getUserBooks = function (req,res) {
+    var userId = req.user._id;
+    Book.find({owner: userId}).exec().then(
+      function (books) {
+        res.json(books);
+      }, function (erro) {
         console.log(erro);
         res.status(404).json('Não encontrado');
       }

@@ -28,7 +28,7 @@
 <!-- End feature div -->
 <div class="list-resumed">
   <div class="container">
-    <h1 class="text-center">Last Books</h1>
+    <h1 class="text-center">Books</h1>
     <ul class="list-inline list-unstyled">
       <li class="book-item" ng-repeat="book in books" style="
       background-image: url({{book.image}});">
@@ -36,6 +36,9 @@
         <p class="item-title">{{book.title}}</p>
       </li>
     </ul>
+    <div class="text-center">
+      <a href="/#/books">Ver a lista completa</a>
+    </div>
   </div>
 </div>
 

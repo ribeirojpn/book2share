@@ -13,6 +13,16 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
     controller: 'AddBookController'
   });
 
+  $routeProvider.when('/books',{
+    templateUrl: 'partials/books.html',
+    controller: 'BookListController'
+  });
+
+  $routeProvider.when('/mybooks',{
+    templateUrl: 'partials/mybooks.html',
+    controller: 'UserBooksController'
+  });
+
   $routeProvider.when('/login',{
     templateUrl: 'partials/login.html'
   });
