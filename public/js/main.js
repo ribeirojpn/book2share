@@ -23,6 +23,11 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
     controller: 'UserBooksController'
   });
 
+  $routeProvider.when('/config',{
+    templateUrl: 'partials/config.html',
+    controller: 'ConfigController'
+  });
+
   $routeProvider.when('/login',{
     templateUrl: 'partials/login.html'
   });

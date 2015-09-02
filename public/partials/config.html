@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="config">
+    <div class="alert alert-danger" role="alert" ng-show="mensagem.erro">
+      <i class="fa fa-exclamation-circle"></i> {{mensagem.erro}}
+    </div>
+    <div class="alert alert-success" role="alert" ng-show="mensagem.success">
+      <i class="fa fa-check"></i> {{mensagem.success}}
+    </div>
+    <h1 class="text-center">Edit your profile</h1>
+    <form class="config-box" ng-submit="save()">
+      <div class="form-group">
+        <label for="userFullName">Full Name:</label>
+        <input type="text" class="form-control" name="fullName" ng-model="user.fullName" id="userFullName" placeholder="Full Name" text="{{user.fullName}}" required="">
+      </div>
+      <div class="form-group">
+        <label for="userCity">City:</label>
+        <input type="text" class="form-control" name="user-city" ng-model="user.city" id="userCity" placeholder="City" text="{{user.city}}" required="">
+      </div>
+      <div class="form-group">
+        <label for="userState">State:</label>
+        <input type="text" class="form-control" name="user-state" ng-model="user.state" id="userState" placeholder="State" text="{{user.state}}" required="">
+      </div>
+      <br>
+      <div class="form-buttons text-right">
+        <a href="/#/" class="btn btn-link">Cancel</a>
+        <button type="submit" class="btn btn-success">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

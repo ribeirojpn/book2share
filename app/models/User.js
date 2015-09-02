@@ -19,7 +19,16 @@ module.exports = function() {
       default: '/images/user.jpg'
     },
     books: [{type: mongoose.Schema.ObjectId, ref: 'Book'}],
-    requests: []
+    requests: [],
+    fullName: {
+      type: String
+    },
+    city: {
+      type:String
+    },
+    state: {
+      type: String
+    },
   });
 
   schema.plugin(findOrCreate);
