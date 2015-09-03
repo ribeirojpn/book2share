@@ -1,0 +1,27 @@
+<div class="book">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="book-img text-center">
+          <img src="{{book.image}}" alt="{{book.title}}" />
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h2>{{book.title}}</h2>
+        <p class="book-author">{{book.author}}</p>
+        <br>
+        <p>{{book.description}}</p>
+      </div>
+      <div class="col-md-2">
+        <ul class="list-unstyled">
+          <li>
+            <a href="/#/" class="btn btn-default">
+              <i class="fa fa-exchange"></i> Request trade
+            </a>
+          </li>
+          <li>Owner: {{ book.owner.name }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

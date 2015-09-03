@@ -4,10 +4,14 @@ module.exports = function(app){
       var name = '';
 		  var photoUrl = '';
 		  if(req.user){
+        userLogin = req.user.login;
         name = req.user.name;
 			  photoUrl = req.user.photo;
 		  }
 
-      res.render('index',{"usuarioLogado":name,"usuarioImg": photoUrl});
+      res.render('index',{
+        "usuarioLogado":name,
+        "usuarioImg": photoUrl
+      });
     });
 }

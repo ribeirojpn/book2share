@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   controller.getBook = function (req,res) {
     var id = req.params.id;
-    Book.findById(id).exec().then(
+    Book.findById(id).populate('owner').exec().then(
       function (book) {
         if (!book){
           throw new Error('Book não encontrado');

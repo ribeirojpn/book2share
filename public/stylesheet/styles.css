@@ -135,6 +135,20 @@ body {
   font-size: 16px;
 }
 
+/* book.html */
+.book {
+  padding-top: 40px;
+}
+
+.book-img img{
+  width: 300px;
+}
+
+.book-author {
+  font-weight: 300;
+  font-size: 14px;
+  color: #565656;
+}
 /* Substition */
 
 .navbar {

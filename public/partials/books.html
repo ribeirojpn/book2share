@@ -8,7 +8,9 @@
         <li class="book-item" ng-repeat="book in books" style="
         background-image: url({{book.image}});">
           <!-- <img class="item-image" src="{{book.image}}" alt="{{book.title}}" /> -->
-          <p class="item-title">{{book.title}}</p>
+          <a href="/#/books/{{book._id}}">
+            <p class="item-title">{{book.title}}</p>
+          </a>
         </li>
       </ul>
     </div>

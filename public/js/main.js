@@ -23,6 +23,11 @@ angular.module('booktoshare',['ngRoute','ngResource']).config(function ($routePr
     controller: 'UserBooksController'
   });
 
+  $routeProvider.when('/books/:id',{
+    templateUrl: 'partials/book.html',
+    controller: 'BookController'
+  });
+
   $routeProvider.when('/config',{
     templateUrl: 'partials/config.html',
     controller: 'ConfigController'
