@@ -15,10 +15,12 @@ module.exports = function () {
       ref: 'User',
     },
     approved:{
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     active:{
-      type:Boolean
+      type:Boolean,
+      default: true
     }
   });
 

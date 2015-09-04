@@ -97,6 +97,11 @@ body {
   color: #363636;
   text-decoration: none;
 }
+/* my-book-list */
+
+.my-book-list {
+  margin-top: 20px;
+}
 
 /* search.html */
 
@@ -131,6 +136,7 @@ body {
   font-weight: 300;
 }
 
+
 /* add-book */
 
 .add-book {
@@ -155,7 +161,7 @@ body {
   font-size: 14px;
   color: #565656;
 }
-/* Substition */
+/* Substitution */
 
 .navbar {
   margin-bottom: 0px;

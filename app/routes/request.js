@@ -1,5 +1,6 @@
 module.exports = function (app) {
   var controller = app.controllers.request;
+  
   function checkAuth(req,res,next) {
 		if (req.isAuthenticated()){
 			return next();

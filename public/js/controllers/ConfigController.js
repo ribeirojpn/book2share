@@ -10,7 +10,7 @@ angular.module('booktoshare').controller('ConfigController',function($resource,$
     console.log($scope.user);
   },function (erro) {
     console.log(erro)
-  })
+  });
 
   $scope.save = function() {
     $scope.user.$save().then(function (user) {
@@ -22,5 +22,5 @@ angular.module('booktoshare').controller('ConfigController',function($resource,$
       $scope.mensagem.erro = 'Update failed';
       console.log(erro);
     });
-  }
+  };
 });
