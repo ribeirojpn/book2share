@@ -9,7 +9,7 @@ module.exports = function (app) {
     } else {
       res.status(404).json('Não encontrado');
     }
-  }
+  };
 
   controller.updateUser = function (req,res) {
     var id = req.body._id;
@@ -18,7 +18,7 @@ module.exports = function (app) {
     }, function (erro) {
       res.status(500).json(erro);
     });
-  }
+  };
 
   return controller;
 }

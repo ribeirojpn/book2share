@@ -26,7 +26,7 @@ module.exports = function (app) {
         console.log(err);
       }
     });
-  }
+  };
 
   return controller;
 }

@@ -9,8 +9,8 @@ module.exports = function(app) {
     },function (erro) {
         console.error(erro);
         res.status(500).json(erro);
-    })
-  }
+    });
+  };
 
   controller.getBook = function (req,res) {
     var id = req.params.id;
@@ -23,7 +23,7 @@ module.exports = function(app) {
     }, function (erro) {
       res.status(404).json('Não encontrado');
     });
-  }
+  };
 
   controller.saveBook = function (req,res) {
     var newBook = req.body;
@@ -36,7 +36,7 @@ module.exports = function(app) {
         res.status(500).json(erro);
       }
     );
-  }
+  };
 
   controller.getResumedBookList = function (req,res) {
     Book.find({},null,{limit:14}).exec().then(
@@ -47,7 +47,7 @@ module.exports = function(app) {
         res.status(404).json('Não encontrado');
       }
     );
-  }
+  };
 
   controller.getUserBooks = function (req,res) {
     var userId = req.user._id;
@@ -59,7 +59,7 @@ module.exports = function(app) {
         res.status(404).json('Não encontrado');
       }
     );
-  }
+  };
 
   return controller;
 }
