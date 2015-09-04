@@ -22,22 +22,27 @@ angular.module('booktoshare').controller('BookController', function($scope,$reso
   });
 
   $scope.request = function() {
-    var request = new Request();
-    request.bookId = $scope.book._id;
-    request.ownerId = $scope.book.owner;
-    request.requesterId = userRequester._id;
+    if ($scope.book.owner._id == userRequester._id){
+      return;
+    } else {
+      var request = new Request();
 
-    request.$save().then(
-      function () {
-        console.log('request maded');
-      })
-      .catch(function (erro) {
-        console.log('request failed');
-        console.log(erro);
-      }
-    );
+      request.bookId = $scope.book._id;
+      request.ownerId = $scope.book.owner._id;
+      request.requesterId = userRequester._id;
 
-    console.log(request);
+      request.$save().then(
+        function () {
+          console.log('request maded');
+        })
+        .catch(function (erro) {
+          console.log('request failed');
+          console.log(erro);
+        }
+      );
+
+      console.log(request);
+    }
   };
 
 })

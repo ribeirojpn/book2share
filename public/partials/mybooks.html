@@ -6,23 +6,28 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="nav nav-pills" role="tablist">
-          <li role="presentation"> <!-- class="active" -->
-            <a href="/#/requests">Requests
+          <li role="presentation" ng-class="{active: checkPresentation('mybooks')}"> <!-- class="active" -->
+            <a href="/#/mybooks" ng-click="setPresentation('mybooks')">My books</a>
+          </li>
+          <li role="presentation" ng-class="{active: checkPresentation('requests')}"> <!-- class="active" -->
+            <a href="/#/mybooks" ng-click="setPresentation('requests')">Requests
               <span class="badge" ng-show="activedRequests">{{activedRequests}}</span>
             </a>
           </li>
-          <li role="presentation"> <!-- class="active" -->
-            <a href="/#/myrequests">My Requests
+          <li role="presentation" ng-class="{active: checkPresentation('myrequests')}"> <!-- class="active" -->
+            <a href="/#/mybooks" ng-click="setPresentation('myrequests')">My Requests
               <span class="badge" ng-show="respondedRequests">{{respondedRequests}}</span>
             </a>
           </li>
         </ul>
       </div>
       <div class="col-md-4 text-right">
-        <a href="/#/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add book</a>
+        <a href="/#/add" class="btn btn-success"><i class="fa fa-plus"></i> Add book</a>
       </div>
     </div>
-    <div class="my-book-list">
+
+    <!-- My Books -->
+    <div class="my-book-list" ng-show="checkPresentation('mybooks')">
       <ul class="list-inline list-unstyled text-center">
         <li class="book-item" ng-repeat="book in books" style="
         background-image: url({{book.image}});">
@@ -35,5 +40,70 @@
         </li>
       </ul>
     </div>
+    <!-- end My Books -->
+    <!-- Requests -->
+    <div class="requests" ng-show="checkPresentation('requests')">
+      <table class="table table-hover">
+        <tr>
+            <th>Book</th>
+            <th>Requested by</th>
+            <th class="text-center">Agree to trade?</th>
+        </tr>
+        <tr ng-repeat="request in requests">
+            <td>
+                <a ng-href="#/books/{{request.bookId._id}}">{{request.bookId.title}}</a>
+            </td>
+            <td>{{request.requesterId.name}}</td>
+            <td class="text-center">
+                <button ng-click="accept(request)" class="btn btn-success">
+                  <i class="fa fa-check"></i>
+                </button>
+                <button ng-click="deny(request)" class="btn btn-danger">
+                  <i class="fa fa-remove"></i>
+                </button>
+            </td>
+        </tr>
+      </table>
+      <p>
+        Finished:
+      </p>
+      <ul class="list-unstyled">
+        <li class="request" ng-repeat="inactiveRequest in inactiveRequests">
+          {{inactiveRequest.bookId.title}} exchanged with {{inactiveRequest.requesterId.name}}
+        </li>
+      </ul>
+    </div>
+    <!-- end Requests -->
+    <!-- MyRequests -->
+    <div class="myrequests" ng-show="checkPresentation('myrequests')">
+      <table class="table table-hover">
+        <tr>
+            <th>Book</th>
+            <th>Owner</th>
+            <th class="text-center">Action</th>
+        </tr>
+        <tr ng-repeat="myrequest in myrequests">
+            <td>
+                <a ng-href="#/books/{{myrequest.bookId._id}}">{{myrequest.bookId.title}}</a>
+            </td>
+            <td>{{myrequest.ownerId.name}}</td>
+            <td class="text-center">
+                <button ng-click="cancel(myrequest)" class="btn btn-danger">
+                  <i class="fa fa-trash"></i>
+                  CANCEL
+                </button>
+            </td>
+        </tr>
+      </table>
+      <p>
+        Finished:
+      </p>
+      <ul class="list-unstyled">
+        <li class="request" ng-repeat="inactiveRequest in inactiveRequests">
+          {{inactiveRequest.bookId.title}} received from {{inactiveRequest.ownerId.name}}
+        </li>
+      </ul>
+    </div>
+    <!-- end MyRequests -->
   </div>
 </div>

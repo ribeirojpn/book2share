@@ -24,7 +24,10 @@ module.exports = function (app) {
   };
 
   controller.getUserRequests = function(req,res) {
-    Request.find({ownerId: req.user._id}).exec().then(
+    Request.find({ownerId: req.user._id})
+    .populate('bookId')
+    .populate('ownerId')
+    .populate('requesterId').exec().then(
       function(requests) {
         res.json(requests);
       },function(erro) {
@@ -34,7 +37,10 @@ module.exports = function (app) {
   };
 
   controller.getMyRequests = function(req,res) {
-    Request.find({requesterId: req.user._id}).exec().then(
+    Request.find({requesterId: req.user._id})
+    .populate('bookId')
+    .populate('ownerId')
+    .populate('requesterId').exec().then(
       function(requests) {
         res.json(requests);
       },function(erro) {
