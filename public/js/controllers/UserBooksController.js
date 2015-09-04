@@ -3,10 +3,14 @@ angular.module('booktoshare').controller('UserBooksController',function ($scope,
   var UserRequest = $resource('/user/request');
   var MyRequest = $resource('/my/request');
   $scope.presentation = 'mybooks';
+  $scope.mensagem = {}
 
   function getBooks() {
     Books.query(function (books) {
       $scope.books = books;
+      if (books.length == 0){
+        $scope.mensagem.text = 'I do not have books, you can add a book or request an exchange.';
+      }
     },function (erro) {
       console.log(erro);
     });

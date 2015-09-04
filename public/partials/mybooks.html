@@ -28,7 +28,7 @@
 
     <!-- My Books -->
     <div class="my-book-list" ng-show="checkPresentation('mybooks')">
-      <ul class="list-inline list-unstyled text-center">
+      <ul class="list-inline list-unstyled text-center" ng-hide="mensagem.text">
         <li class="book-item" ng-repeat="book in books" style="
         background-image: url({{book.image}});">
           <!-- <img class="item-image" src="{{book.image}}" alt="{{book.title}}" /> -->
@@ -39,6 +39,12 @@
         </a>
         </li>
       </ul>
+      <div class="text-center" ng-show="mensagem.text">
+        <p>
+          {{mensagem.text}}
+        </p>
+      </div>
+
     </div>
     <!-- end My Books -->
     <!-- Requests -->
