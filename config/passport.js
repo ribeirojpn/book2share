@@ -32,7 +32,8 @@ module.exports = function () {
   passport.use(new FacebookStrategy({
     clientID: '1026586744032934',
     clientSecret: '51c5dc852108a92425c1f1983d7d5d5b',
-    callbackURL: "http://127.0.0.1:3000/auth/facebook/callback",
+    // callbackURL: "http://127.0.0.1:3000/auth/facebook/callback",
+    callbackURL: "https://book2share.herokuapp.com/auth/facebook/callback",
     profileFields: ['id','displayName','photos','emails']
   }, function (accessToken, refreshToken, profile, done) {
     User.findOrCreate(
@@ -53,7 +54,8 @@ module.exports = function () {
   passport.use(new GoogleStrategy({
     clientID: '192440724904-4ea01dmm26kglbsa6p6njm4mbmrlrppq.apps.googleusercontent.com',
     clientSecret: '1z0XYhqoIABVRp7zzYZw-Cz-',
-    callbackURL: "http://127.0.0.1:3000/auth/google/callback",
+    // callbackURL: "http://127.0.0.1:3000/auth/google/callback",
+    callbackURL: "https://book2share.herokuapp.com/auth/google/callback",
     profileFields: ['id','displayName','photos','emails']
   },function(accessToken, refreshToken, profile, done) {
     User.findOrCreate(
