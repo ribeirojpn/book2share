@@ -11,7 +11,7 @@ module.exports = function () {
   passport.use(new TwitterStrategy({
     consumerKey: 'bSMdRmJPlruspGzHy2v6gadbe',
     consumerSecret: 'FUXNvBZ6TollsUUYsrDGNPTAolyEVLw6YY3Ew3bSqgfTvJs0iH',
-    callbackURL: 'http://127.0.0.1:3000/auth/twitter/callback',
+    callbackURL: 'https://book2share.herokuapp.com/auth/twitter/callback',
     profileFields: ['id','displayName','photos','username']
   }, function (token,tokenSecret, profile, done) {
     User.findOrCreate(
