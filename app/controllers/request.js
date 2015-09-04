@@ -72,7 +72,7 @@ module.exports = function (app) {
   controller.updateRequest = function(req,res) {
     Request.findByIdAndUpdate(req.params.id,{
         approved: req.body.approved,
-        active: false
+        active: req.body.active
       }, function(request) {
         res.status(201).json(request);
       },function(erro) {

@@ -61,5 +61,16 @@ module.exports = function(app) {
     );
   };
 
+  controller.updateBook = function(req,res) {
+    Book.findByIdAndUpdate(req.params.id,{
+        owner: req.body.owner
+      }, function(request) {
+        res.status(201).json(request);
+      },function(erro) {
+        res.status(500).json(erro);
+      }
+    );
+  }
+
   return controller;
 }

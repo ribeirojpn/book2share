@@ -1,6 +1,6 @@
 module.exports = function (app) {
   var controller = app.controllers.request;
-  
+
   function checkAuth(req,res,next) {
 		if (req.isAuthenticated()){
 			return next();
@@ -14,7 +14,8 @@ module.exports = function (app) {
     .post(checkAuth,controller.addRequest);
 
   app.route('/user/request')
-    .get(checkAuth,controller.getUserRequests);
+    .get(checkAuth,controller.getUserRequests)
+    .post(checkAuth,controller.updateRequest);
 
   app.route('/my/request')
     .get(checkAuth,controller.getMyRequests);

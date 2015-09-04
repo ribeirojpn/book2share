@@ -14,7 +14,8 @@ module.exports = function (app) {
     .post(checkAuth,controller.saveBook);
 
   app.route('/books/:id')
-    .get(controller.getBook);
+    .get(controller.getBook)
+    .post(checkAuth,controller.updateBook);
     // .delete(controller.removeBook);
 
   app.route('/user-books')

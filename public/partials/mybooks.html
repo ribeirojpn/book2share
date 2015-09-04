@@ -16,7 +16,7 @@
           </li>
           <li role="presentation" ng-class="{active: checkPresentation('myrequests')}"> <!-- class="active" -->
             <a href="/#/mybooks" ng-click="setPresentation('myrequests')">My Requests
-              <span class="badge" ng-show="respondedRequests">{{respondedRequests}}</span>
+              <!-- <span class="badge" ng-show="respondedRequests">{{respondedRequests}}</span> -->
             </a>
           </li>
         </ul>
@@ -55,10 +55,10 @@
             </td>
             <td>{{request.requesterId.name}}</td>
             <td class="text-center">
-                <button ng-click="accept(request)" class="btn btn-success">
+                <button ng-click="trade(request,true)" class="btn btn-success">
                   <i class="fa fa-check"></i>
                 </button>
-                <button ng-click="deny(request)" class="btn btn-danger">
+                <button ng-click="trade(request,false)" class="btn btn-danger">
                   <i class="fa fa-remove"></i>
                 </button>
             </td>
@@ -69,7 +69,9 @@
       </p>
       <ul class="list-unstyled">
         <li class="request" ng-repeat="inactiveRequest in inactiveRequests">
-          {{inactiveRequest.bookId.title}} exchanged with {{inactiveRequest.requesterId.name}}
+          <i class="fa fa-check" ng-show="inactiveRequest.approved"></i>
+          <i class="fa fa-remove" ng-show="!inactiveRequest.approved"></i>
+          | {{inactiveRequest.bookId.title}} - Requested by {{inactiveRequest.requesterId.name}}
         </li>
       </ul>
     </div>
@@ -99,8 +101,10 @@
         Finished:
       </p>
       <ul class="list-unstyled">
-        <li class="request" ng-repeat="inactiveRequest in inactiveRequests">
-          {{inactiveRequest.bookId.title}} received from {{inactiveRequest.ownerId.name}}
+        <li class="request" ng-repeat="respondedMyRequest in respondedMyRequests">
+            <i class="fa fa-check" ng-show="respondedMyRequest.approved"></i>
+            <i class="fa fa-remove" ng-show="!respondedMyRequest.approved"></i>
+             {{respondedMyRequest.bookId.title}} - for {{respondedMyRequest.ownerId.name}}
         </li>
       </ul>
     </div>
