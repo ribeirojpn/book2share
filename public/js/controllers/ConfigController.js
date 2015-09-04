@@ -7,7 +7,6 @@ angular.module('booktoshare').controller('ConfigController',function($resource,$
 
   User.get(function (user) {
     $scope.user = user;
-    console.log($scope.user);
   },function (erro) {
     console.log(erro)
   });

@@ -10,8 +10,8 @@ module.exports = function (app) {
 	}
 
   app.route('/request')
-    .get(checkAuth,controller.getRequests)
-    .post(checkAuth,controller.addRequest);
+    .get(controller.getRequests)
+    .post(controller.addRequest);
 
   app.route('/user/request')
     .get(checkAuth,controller.getUserRequests)

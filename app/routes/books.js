@@ -15,11 +15,11 @@ module.exports = function (app) {
 
   app.route('/books/:id')
     .get(controller.getBook)
-    .post(checkAuth,controller.updateBook);
-    // .delete(controller.removeBook);
+    .post(checkAuth,controller.updateBook)
+    .delete(checkAuth,controller.removeBook);
 
   app.route('/user-books')
-    .get(controller.getUserBooks);
+    .get(checkAuth,controller.getUserBooks);
 
   app.route('/books-resume')
     .get(controller.getResumedBookList);

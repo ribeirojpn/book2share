@@ -17,7 +17,6 @@ angular.module('booktoshare').controller('UserBooksController',function ($scope,
       $scope.requests = [];
       $scope.inactiveRequests = [];
       $scope.activedRequests = 0;
-      console.log(requests);
 
       for (var i = 0; i < requests.length; i++){
         if (requests[i].active){
@@ -64,7 +63,6 @@ angular.module('booktoshare').controller('UserBooksController',function ($scope,
 
     $http.post('/request/' + request._id,request).then(
       function (request) {
-        console.log(request);
         getUserRequests();
     },function (erro) {
         console.log(erro);
@@ -73,7 +71,6 @@ angular.module('booktoshare').controller('UserBooksController',function ($scope,
     if (result){
       $http.post('/books/' + book._id,book).then(
         function (book) {
-          console.log(book);
           getBooks();
       },function (erro) {
           console.log(erro);

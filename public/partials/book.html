@@ -1,5 +1,16 @@
-<div class="book">
+
+<div class="alert alert-success" role="alert" ng-show="mensagem.delete">
+  <i class="fa fa-check"></i> {{mensagem.delete}} <a href="/#/mybooks">Go back.</a>
+</div>
+
+<div class="book" ng-hide="mensagem.delete">
   <div class="container">
+    <div class="alert alert-danger text-center" role="alert" ng-show="mensagem.erro">
+      <i class="fa fa-exclamation-circle"></i> {{mensagem.erro}}
+    </div>
+    <div class="alert alert-success" role="alert" ng-show="mensagem.request">
+      <i class="fa fa-check"></i> {{mensagem.request}} <a href="/#/mybooks">Go back.</a>
+    </div>
     <div class="row">
       <div class="col-md-5">
         <div class="book-img text-center">
@@ -14,12 +25,17 @@
       </div>
       <div class="col-md-2">
         <ul class="list-unstyled">
-          <li>
+          <li ng-show="!checkUser() && userLoged">
             <button type="button" class="btn btn-default" ng-click="request()">
               <i class="fa fa-exchange"></i> Request trade
             </button>
+            <p class="book-owner">Owner: {{ book.owner.name }}</p>
           </li>
-          <li><p class="book-owner">Owner: {{ book.owner.name }}</p></li>
+          <li ng-show="checkUser()">
+            <button type="button" class="btn btn-danger" ng-click="removeBook()">
+              <i class="fa fa-trash-o"></i> Remove Book
+            </button>
+          </li>
         </ul>
       </div>
     </div>

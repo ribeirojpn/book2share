@@ -70,6 +70,16 @@ module.exports = function(app) {
         res.status(500).json(erro);
       }
     );
+  };
+
+  controller.removeBook = function(req,res) {
+    Book.findByIdAndRemove(req.params.id).exec().then(
+      function() {
+        res.status(204).end();
+      }, function(erro) {
+        res.status(500).json(erro);
+      }
+    );
   }
 
   return controller;
